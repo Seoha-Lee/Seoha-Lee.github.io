@@ -1,36 +1,221 @@
+/* Base Styles */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
   margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #fdfbf9;
   color: #333;
+  display: flex;
+  justify-content: center;
 }
 
-header {
-  background: #333;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-}
-
-header nav a {
-  color: #fff;
-  margin: 0 1rem;
-  text-decoration: none;
-}
-
-section {
+.container {
+  max-width: 900px;
+  width: 100%;
   padding: 2rem;
-  margin: 1rem auto;
-  max-width: 800px;
-  background: #fff;
-  border-radius: 8px;
+  text-align: center; /* Center all content */
 }
 
-footer {
+/* Centered content helper */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Page title default (left-aligned for non-start pages) */
+.page-title {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1rem;
+  text-align: left; /* left-align text */
+  width: 100%;      /* ensure full width for left alignment */
+}
+
+/* Start page override: center title */
+body.start-page .page-title {
+  text-align: left;
+}
+
+/* Navigation Buttons */
+.page-buttons {
+  display: flex;
+  justify-content: space-evenly; /* Spread buttons evenly */
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.btn {
+  background-color:  #fdfbf9;
+  color: #800020;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  flex: 1 1 150px; /* Responsive buttons */
+  margin: 0.5rem;
   text-align: center;
-  padding: 1rem;
-  background: #333;
-  color: #fff;
+}
+
+.btn:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px; /* adds space between text and underline */
+  font-weight: bold;
+}
+
+/* Active Navigation Button */
+.btn.active {
+  text-decoration: underline;
+  text-underline-offset: 4px; /* adds space between text and underline */
+  font-weight: bold;
+}
+
+.btn.active:hover {
+  transform: none; /* Disable hover effect for active button */
+}
+
+/* Profile Section Side-by-Side */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem; /* Space between picture and text */
+  justify-content: center; /* Center horizontally in the page */
+  margin-bottom: 3rem; /* Space below profile section */
+  flex-wrap: wrap; /* Stack on small screens */
+}
+
+.profile-pic {
+  width: 260px;
+  height: 340px;
+  object-fit: cover;   /* Keep image proportioned */
+  border: 0px solid #800020;
+  transition: transform 0.3s;
+  border-radius: 0;    /* Remove rounding to make it square */
+}
+
+/* Profile Text */
+.profile-text {
+  max-width: 500px;
+  text-align: left; /* Align text to the left of the container */
+}
+
+.profile-text h1 {
+  color: #800020;
+  margin: 0 0 0.5rem 0;
+}
+
+.profile-text p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive: Stack picture and text on small screens */
+@media (max-width: 600px) {
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-text {
+    text-align: center;
+  }
+}
+
+
+/* Header Text */
+header h1 {
+  text-align: left;
+  width: 100%;
+  color: #800020;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 500px;
+}
+
+/* Projects Cards */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  justify-items: center;
+}
+
+.project-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+  max-width: 300px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: #800020;
+}
+
+.project-card p {
+  color: #555;
+}
+
+/* Contact Links - Horizontal Layout */
+.center-content.contact {
+  display: flex;              /* Flex layout */
+  flex-direction: column;        /* Ensure horizontal alignment */
+  justify-content: center;    /* Center links horizontally */
+  align-items: center;        /* Vertically align links if needed */
+  gap: 0rem;                /* Space between links */
+  width: 100%;
+  flex-wrap: wrap;            /* Wrap links on small screens */
+  margin-bottom: 4rem;        /* Space before footer */
+  align-self: stretch;
+}
+
+.contact a {
+  font-weight: bold;
+  color: #800020;
+  text-decoration: none;
+  transition: color 0.3s;
+  margin: 0;
+}
+.contact a:hover {
+  color: #b22222;
+}
+
+/* Responsive: stack contacts on mobile */
+@media (max-width: 600px) {
+  .contact {
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Footer */
+footer {
+  margin-top: 8rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 500px) {
+  .page-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 }
