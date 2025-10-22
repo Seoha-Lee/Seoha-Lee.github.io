@@ -52,6 +52,8 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
   margin-bottom: 2rem;
   width: 100%;
+  border-bottom: 2px solid #800020; /* Horizontal line */
+  padding-bottom: 1rem;             /* Space between buttons and line */
 }
 
 .btn {
@@ -163,14 +165,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Contact Links */
-.center-content.contact {
+.contact {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;     /* Stack links vertically */
+  align-items: flex-start;    /* Left-align links */
+  justify-content: flex-start;
   width: 100%;
-  flex-wrap: wrap;
-  margin-bottom: 4rem;
+  text-align: left;           /* Force text left-alignment */
+  margin-top: 2rem;
+  gap: 0.7rem;                /* Space between links */
+  padding-left: 7rem; /* Move links slightly to the right */
 }
 
 .contact a {
@@ -208,3 +212,5 @@ footer {
     gap: 0.75rem;
   }
 }
+
+
