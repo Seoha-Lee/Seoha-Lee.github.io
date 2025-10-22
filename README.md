@@ -7,7 +7,8 @@ Personal Website of Seoha Lee
 - [ ] index page
 - [ ] experience page
 - [ ] projects page
-- [ ] contact page
+- [x] contact page
 - [ ] Mobile Optimization
+- [ ] Multilingual pages
 
 

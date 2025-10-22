@@ -45,6 +45,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.5rem 0;
 }
 
+
 /* Navigation Buttons */
 .page-buttons {
   display: flex;
@@ -128,6 +129,82 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
   }
 }
+
+/* Experience Page*/
+.experience-section {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+/* Timeline vertical line */
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 2rem;
+  border-left: 2px solid #800020;
+}
+
+/* Individual experience entries */
+.experience-item {
+  position: relative;
+  padding: 1rem 0 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Experience content (left side) */
+.experience-content h3 {
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  color: #800020;
+
+}
+
+.experience-content h3 a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.experience-content h3 a:hover {
+  text-decoration: none;        /* optional: underline on hover */
+}
+
+.experience-content p a:hover {
+  text-decoration: none;        /* optional: underline on hover */
+}
+
+.experience-content p {
+  margin: 0.25rem 0;
+  font-family: 'Lora', serif;
+  color: #333;
+}
+
+/* Timeframe (right side) */
+.timeframe {
+  font-style: italic;
+  color: #666;
+  white-space: nowrap;
+  text-align: right;
+  flex-shrink: 0;
+  font-family: 'Lora', serif;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  .experience-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeframe {
+    margin-top: 0.3rem;
+    text-align: left;
+  }
+}
+
 
 /* Projects Cards */
 .projects {
@@ -213,4 +290,15 @@ footer {
   }
 }
 
+/* Links in <p> */
+p a {
+  color: inherit;            /* Inherit text color from parent */
+  text-decoration: none;     /* Remove underline */
+  font-weight: normal;       /* Optional: match normal text weight */
+  font-style: italic;
+}
 
+p a:hover {
+  text-decoration: underline; /* Optional: show underline on hover */
+  color: inherit;             /* Keep color same on hover */
+}
