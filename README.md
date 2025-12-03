@@ -4,7 +4,7 @@ Personal Website of Seoha Lee
 ---
 
 **TODO**
-- [ ] index page
+- [x] index page
 - [ ] experience page
 - [ ] projects page
 - [x] contact page
